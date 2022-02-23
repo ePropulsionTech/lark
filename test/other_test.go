@@ -18,7 +18,7 @@ package test
 import (
 	"testing"
 
-	"github.com/chyroc/lark/internal"
+	"github.com/ePropulsionTech/lark/internal"
 	"github.com/stretchr/testify/assert"
 )
 

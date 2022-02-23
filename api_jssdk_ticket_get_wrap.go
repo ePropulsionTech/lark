@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chyroc/lark/internal"
+	"github.com/ePropulsionTech/lark/internal"
 )
 
 // GenerateJssdkSignature ...

@@ -32,7 +32,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chyroc/lark/internal"
+	"github.com/ePropulsionTech/lark/internal"
 )
 
 // Response contains the general return value of the http request, such as request-id, etc.

@@ -20,7 +20,7 @@ package lark
 import (
 	"context"
 
-	"github.com/chyroc/lark/internal"
+	"github.com/ePropulsionTech/lark/internal"
 )
 
 // EndVCMeeting 结束一个进行中的会议
