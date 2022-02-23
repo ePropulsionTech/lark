@@ -28,7 +28,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/ePropulsionTech/lark/internal"
+	"github.com/epropulsion-tech/lark/internal"
 )
 
 // https://open.feishu.cn/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#8f960a4b

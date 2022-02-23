@@ -18,7 +18,7 @@
 package lark
 
 import (
-	"github.com/ePropulsionTech/lark/internal"
+	"github.com/epropulsion-tech/lark/internal"
 )
 
 // OpenCalender 跳转并打开日历，打开界面为上一次离开日历时的视图。
