@@ -302,8 +302,8 @@ const (
 
 // 作为text对象被使用，支持"plain_text"和"lark_md"两种模式
 type MessageContentCardObjectText struct {
-	Tag     MessageContentCardObjectTextType `json:"tag,omitempty"`     // plain_text / lark_md
-	Content string                           `json:"content,omitempty"` // 文本内容
+	Tag     MessageContentCardObjectTextType `json:"tag"`               // plain_text / lark_md
+	Content string                           `json:"content"`           // 文本内容
 	Lines   int                              `json:"lines,omitempty"`   // 内容显示行数
 }
 
@@ -325,8 +325,8 @@ const (
 //
 // https://open.feishu.cn/document/ukTMukTMukTM/uYzNwUjL2cDM14iN3ATN
 type MessageContentCardObjectField struct {
-	IsShort bool                          `json:"is_short,omitempty"` // 是否并排布局
-	Text    *MessageContentCardObjectText `json:"text,omitempty"`     // 	国际化文本内容
+	IsShort bool                          `json:"is_short"` // 是否并排布局
+	Text    *MessageContentCardObjectText `json:"text"`     // 	国际化文本内容
 }
 
 // url对象用作多端差异跳转链接
