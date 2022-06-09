@@ -1,4 +1,4 @@
-module github.com/ePropulsionTech/lark
+module github.com/epropulsion-tech/lark
 
 go 1.16
 
