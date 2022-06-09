@@ -20,16 +20,22 @@ type MsgType string
 
 // MsgTypeText ...
 const (
-	MsgTypeText        MsgType = "text"        // 文本
-	MsgTypePost        MsgType = "post"        // 富文本
-	MsgTypeImage       MsgType = "image"       // 图片
-	MsgTypeFile        MsgType = "file"        // 文件
-	MsgTypeAudio       MsgType = "audio"       // 语音
-	MsgTypeMedia       MsgType = "media"       // 视频
-	MsgTypeSticker     MsgType = "sticker"     // 表情包
-	MsgTypeInteractive MsgType = "interactive" // 卡片消息
-	MsgTypeShareChat   MsgType = "share_chat"  // 分享群卡片
-	MsgTypeShareUser   MsgType = "share_user"  // 分享个人卡片
+	MsgTypeText               MsgType = "text"                 // 文本
+	MsgTypePost               MsgType = "post"                 // 富文本
+	MsgTypeImage              MsgType = "image"                // 图片
+	MsgTypeFile               MsgType = "file"                 // 文件
+	MsgTypeAudio              MsgType = "audio"                // 语音
+	MsgTypeMedia              MsgType = "media"                // 视频
+	MsgTypeSticker            MsgType = "sticker"              // 表情包
+	MsgTypeInteractive        MsgType = "interactive"          // 卡片消息
+	MsgTypeRedBag             MsgType = "red_bag"              // 红包
+	MsgTypeShareCalendarEvent MsgType = "share_calendar_event" // 分享日历事件
+	MsgTypeShareChat          MsgType = "share_chat"           // 分享群卡片
+	MsgTypeShareUser          MsgType = "share_user"           // 分享个人卡片
+	MsgTypeMergeForward       MsgType = "merge_forward"        // 合并转发消息内容
+	MsgTypeSystem             MsgType = "system"               // 系统消息
+	MsgTypeLocation           MsgType = "location"             // 地理位置
+	MsgTypeVideoChat          MsgType = "video_chat"           // 视频通话
 )
 
 // MsgTypePtr ...
@@ -162,13 +168,16 @@ type FileType string
 
 // FileTypeOpus ...
 const (
-	FileTypeOpus   FileType = "opus"   // 上传opus音频文件；其他格式的音频文件，请转为opus格式后上传，转换方式可参考：ffmpeg -i SourceFile.mp3 -acodec libopus -ac 1 -ar 16000 TargetFile.opus
-	FileTypeMp4    FileType = "mp4"    // 上传mp4视频文件
-	FileTypePdf    FileType = "pdf"    // 上传pdf格式文件
-	FileTypeDoc    FileType = "doc"    // 上传doc格式文件
-	FileTypeXls    FileType = "xls"    // 上传xls格式文件
-	FileTypePpt    FileType = "ppt"    // 上传ppt格式文件
-	FileTypeStream FileType = "stream" // 上传stream格式文件
+	FileTypeOpus    FileType = "opus"    // opus音频文件；其他格式的音频文件，请转为opus格式后上传，转换方式可参考：ffmpeg -i SourceFile.mp3 -acodec libopus -ac 1 -ar 16000 TargetFile.opus
+	FileTypeMp4     FileType = "mp4"     // mp4视频文件
+	FileTypePdf     FileType = "pdf"     // pdf格式文件
+	FileTypeDoc     FileType = "doc"     // doc格式文件
+	FileTypeDocx    FileType = "docx"    // docx格式文件
+	FileTypeWiKi    FileType = "wiki"    // wiki格式文件
+	FileTypeBitable FileType = "bitable" // 多维表格
+	FileTypeXls     FileType = "xls"     // xls格式文件
+	FileTypePpt     FileType = "ppt"     // ppt格式文件
+	FileTypeStream  FileType = "stream"  // stream格式文件
 )
 
 // FileTypePtr ...

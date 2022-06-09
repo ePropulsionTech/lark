@@ -32,6 +32,7 @@ const (
 	EventTypeV2ApplicationApplicationAppVersionPublishRevokeV6 EventType = "application.application.app_version.publish_revoke_v6"
 	EventTypeV2ApplicationApplicationCreatedV6                 EventType = "application.application.created_v6"
 	EventTypeV2ContactCustomAttrEventUpdatedV3                 EventType = "contact.custom_attr_event.updated_v3"
+	EventTypeV2DriveFileBitableRecordChangedV1                 EventType = "drive.file.bitable_record_changed_v1"
 	EventTypeV2DriveFileTitleUpdatedV1                         EventType = "drive.file.title_updated_v1"
 	EventTypeV2DriveFileReadV1                                 EventType = "drive.file.read_v1"
 	EventTypeV2DriveFileEditV1                                 EventType = "drive.file.edit_v1"
@@ -59,6 +60,8 @@ const (
 	EventTypeV1AppUninstalled                                  EventType = "app_uninstalled"
 	EventTypeV1AppStatusChange                                 EventType = "app_status_change"
 	EventTypeV2ApplicationApplicationVisibilityAddedV6         EventType = "application.application.visibility.added_v6"
+	EventTypeV2ApplicationApplicationFeedbackCreatedV6         EventType = "application.application.feedback.created_v6"
+	EventTypeV2ApplicationApplicationFeedbackUpdatedV6         EventType = "application.application.feedback.updated_v6"
 	EventTypeV2AttendanceUserTaskUpdatedV1                     EventType = "attendance.user_task.updated_v1"
 	EventTypeV2AttendanceUserFlowCreatedV1                     EventType = "attendance.user_flow.created_v1"
 	EventTypeV2AwemeEcosystemAwemeUserBindedAccountV1          EventType = "aweme_ecosystem.aweme_user.binded_account_v1"
@@ -67,7 +70,7 @@ const (
 	EventTypeV2TaskTaskCommentUpdatedV1                        EventType = "task.task.comment.updated_v1"
 	EventTypeV2HelpdeskTicketMessageCreatedV1                  EventType = "helpdesk.ticket_message.created_v1"
 	EventTypeV2HelpdeskTicketCreatedV1                         EventType = "helpdesk.ticket.created_v1"
-	EventTypeV2HelpdeskTicketMessageUpdatedV1                  EventType = "helpdesk.ticket.updated_v1"
+	EventTypeV2HelpdeskTicketUpdatedV1                         EventType = "helpdesk.ticket.updated_v1"
 	EventTypeV2HelpdeskNotificationApproveV1                   EventType = "helpdesk.notification.approve_v1"
 	EventTypeV2ContactDepartmentCreatedV3                      EventType = "contact.department.created_v3"
 	EventTypeV2ContactDepartmentDeletedV3                      EventType = "contact.department.deleted_v3"
@@ -115,6 +118,8 @@ const (
 	EventTypeV1RemoveUserFromChat                              EventType = "remove_user_from_chat"
 	EventTypeV1RevokeAddUserFromChat                           EventType = "revoke_add_user_from_chat"
 	EventTypeV1ChatDisband                                     EventType = "chat_disband"
+	EventTypeV1ApprovalTask                                    EventType = "approval_task"
+	EventTypeV1ApprovalCc                                      EventType = "approval_cc"
 )
 
 type eventHandler struct {
@@ -124,6 +129,7 @@ type eventHandler struct {
 	eventV2ApplicationApplicationAppVersionPublishRevokeV6Handler EventV2ApplicationApplicationAppVersionPublishRevokeV6Handler
 	eventV2ApplicationApplicationCreatedV6Handler                 EventV2ApplicationApplicationCreatedV6Handler
 	eventV2ContactCustomAttrEventUpdatedV3Handler                 EventV2ContactCustomAttrEventUpdatedV3Handler
+	eventV2DriveFileBitableRecordChangedV1Handler                 EventV2DriveFileBitableRecordChangedV1Handler
 	eventV2DriveFileTitleUpdatedV1Handler                         EventV2DriveFileTitleUpdatedV1Handler
 	eventV2DriveFileReadV1Handler                                 EventV2DriveFileReadV1Handler
 	eventV2DriveFileEditV1Handler                                 EventV2DriveFileEditV1Handler
@@ -151,6 +157,8 @@ type eventHandler struct {
 	eventV1AppUninstalledHandler                                  EventV1AppUninstalledHandler
 	eventV1AppStatusChangeHandler                                 EventV1AppStatusChangeHandler
 	eventV2ApplicationApplicationVisibilityAddedV6Handler         EventV2ApplicationApplicationVisibilityAddedV6Handler
+	eventV2ApplicationApplicationFeedbackCreatedV6Handler         EventV2ApplicationApplicationFeedbackCreatedV6Handler
+	eventV2ApplicationApplicationFeedbackUpdatedV6Handler         EventV2ApplicationApplicationFeedbackUpdatedV6Handler
 	eventV2AttendanceUserTaskUpdatedV1Handler                     EventV2AttendanceUserTaskUpdatedV1Handler
 	eventV2AttendanceUserFlowCreatedV1Handler                     EventV2AttendanceUserFlowCreatedV1Handler
 	eventV2AwemeEcosystemAwemeUserBindedAccountV1Handler          EventV2AwemeEcosystemAwemeUserBindedAccountV1Handler
@@ -159,7 +167,7 @@ type eventHandler struct {
 	eventV2TaskTaskCommentUpdatedV1Handler                        EventV2TaskTaskCommentUpdatedV1Handler
 	eventV2HelpdeskTicketMessageCreatedV1Handler                  EventV2HelpdeskTicketMessageCreatedV1Handler
 	eventV2HelpdeskTicketCreatedV1Handler                         EventV2HelpdeskTicketCreatedV1Handler
-	eventV2HelpdeskTicketMessageUpdatedV1Handler                  EventV2HelpdeskTicketMessageUpdatedV1Handler
+	eventV2HelpdeskTicketUpdatedV1Handler                         EventV2HelpdeskTicketUpdatedV1Handler
 	eventV2HelpdeskNotificationApproveV1Handler                   EventV2HelpdeskNotificationApproveV1Handler
 	eventV2ContactDepartmentCreatedV3Handler                      EventV2ContactDepartmentCreatedV3Handler
 	eventV2ContactDepartmentDeletedV3Handler                      EventV2ContactDepartmentDeletedV3Handler
@@ -207,6 +215,8 @@ type eventHandler struct {
 	eventV1RemoveUserFromChatHandler                              EventV1RemoveUserFromChatHandler
 	eventV1RevokeAddUserFromChatHandler                           EventV1RevokeAddUserFromChatHandler
 	eventV1ChatDisbandHandler                                     EventV1ChatDisbandHandler
+	eventV1ApprovalTaskHandler                                    EventV1ApprovalTaskHandler
+	eventV1ApprovalCcHandler                                      EventV1ApprovalCcHandler
 }
 
 func (r *eventHandler) clone() *eventHandler {
@@ -217,6 +227,7 @@ func (r *eventHandler) clone() *eventHandler {
 		eventV2ApplicationApplicationAppVersionPublishRevokeV6Handler: r.eventV2ApplicationApplicationAppVersionPublishRevokeV6Handler,
 		eventV2ApplicationApplicationCreatedV6Handler:                 r.eventV2ApplicationApplicationCreatedV6Handler,
 		eventV2ContactCustomAttrEventUpdatedV3Handler:                 r.eventV2ContactCustomAttrEventUpdatedV3Handler,
+		eventV2DriveFileBitableRecordChangedV1Handler:                 r.eventV2DriveFileBitableRecordChangedV1Handler,
 		eventV2DriveFileTitleUpdatedV1Handler:                         r.eventV2DriveFileTitleUpdatedV1Handler,
 		eventV2DriveFileReadV1Handler:                                 r.eventV2DriveFileReadV1Handler,
 		eventV2DriveFileEditV1Handler:                                 r.eventV2DriveFileEditV1Handler,
@@ -244,6 +255,8 @@ func (r *eventHandler) clone() *eventHandler {
 		eventV1AppUninstalledHandler:                                  r.eventV1AppUninstalledHandler,
 		eventV1AppStatusChangeHandler:                                 r.eventV1AppStatusChangeHandler,
 		eventV2ApplicationApplicationVisibilityAddedV6Handler:         r.eventV2ApplicationApplicationVisibilityAddedV6Handler,
+		eventV2ApplicationApplicationFeedbackCreatedV6Handler:         r.eventV2ApplicationApplicationFeedbackCreatedV6Handler,
+		eventV2ApplicationApplicationFeedbackUpdatedV6Handler:         r.eventV2ApplicationApplicationFeedbackUpdatedV6Handler,
 		eventV2AttendanceUserTaskUpdatedV1Handler:                     r.eventV2AttendanceUserTaskUpdatedV1Handler,
 		eventV2AttendanceUserFlowCreatedV1Handler:                     r.eventV2AttendanceUserFlowCreatedV1Handler,
 		eventV2AwemeEcosystemAwemeUserBindedAccountV1Handler:          r.eventV2AwemeEcosystemAwemeUserBindedAccountV1Handler,
@@ -252,7 +265,7 @@ func (r *eventHandler) clone() *eventHandler {
 		eventV2TaskTaskCommentUpdatedV1Handler:                        r.eventV2TaskTaskCommentUpdatedV1Handler,
 		eventV2HelpdeskTicketMessageCreatedV1Handler:                  r.eventV2HelpdeskTicketMessageCreatedV1Handler,
 		eventV2HelpdeskTicketCreatedV1Handler:                         r.eventV2HelpdeskTicketCreatedV1Handler,
-		eventV2HelpdeskTicketMessageUpdatedV1Handler:                  r.eventV2HelpdeskTicketMessageUpdatedV1Handler,
+		eventV2HelpdeskTicketUpdatedV1Handler:                         r.eventV2HelpdeskTicketUpdatedV1Handler,
 		eventV2HelpdeskNotificationApproveV1Handler:                   r.eventV2HelpdeskNotificationApproveV1Handler,
 		eventV2ContactDepartmentCreatedV3Handler:                      r.eventV2ContactDepartmentCreatedV3Handler,
 		eventV2ContactDepartmentDeletedV3Handler:                      r.eventV2ContactDepartmentDeletedV3Handler,
@@ -300,6 +313,8 @@ func (r *eventHandler) clone() *eventHandler {
 		eventV1RemoveUserFromChatHandler:                              r.eventV1RemoveUserFromChatHandler,
 		eventV1RevokeAddUserFromChatHandler:                           r.eventV1RevokeAddUserFromChatHandler,
 		eventV1ChatDisbandHandler:                                     r.eventV1ChatDisbandHandler,
+		eventV1ApprovalTaskHandler:                                    r.eventV1ApprovalTaskHandler,
+		eventV1ApprovalCcHandler:                                      r.eventV1ApprovalCcHandler,
 	}
 }
 
@@ -309,6 +324,7 @@ type eventBody struct {
 	eventV2ApplicationApplicationAppVersionPublishRevokeV6 *EventV2ApplicationApplicationAppVersionPublishRevokeV6
 	eventV2ApplicationApplicationCreatedV6                 *EventV2ApplicationApplicationCreatedV6
 	eventV2ContactCustomAttrEventUpdatedV3                 *EventV2ContactCustomAttrEventUpdatedV3
+	eventV2DriveFileBitableRecordChangedV1                 *EventV2DriveFileBitableRecordChangedV1
 	eventV2DriveFileTitleUpdatedV1                         *EventV2DriveFileTitleUpdatedV1
 	eventV2DriveFileReadV1                                 *EventV2DriveFileReadV1
 	eventV2DriveFileEditV1                                 *EventV2DriveFileEditV1
@@ -336,6 +352,8 @@ type eventBody struct {
 	eventV1AppUninstalled                                  *EventV1AppUninstalled
 	eventV1AppStatusChange                                 *EventV1AppStatusChange
 	eventV2ApplicationApplicationVisibilityAddedV6         *EventV2ApplicationApplicationVisibilityAddedV6
+	eventV2ApplicationApplicationFeedbackCreatedV6         *EventV2ApplicationApplicationFeedbackCreatedV6
+	eventV2ApplicationApplicationFeedbackUpdatedV6         *EventV2ApplicationApplicationFeedbackUpdatedV6
 	eventV2AttendanceUserTaskUpdatedV1                     *EventV2AttendanceUserTaskUpdatedV1
 	eventV2AttendanceUserFlowCreatedV1                     *EventV2AttendanceUserFlowCreatedV1
 	eventV2AwemeEcosystemAwemeUserBindedAccountV1          *EventV2AwemeEcosystemAwemeUserBindedAccountV1
@@ -344,7 +362,7 @@ type eventBody struct {
 	eventV2TaskTaskCommentUpdatedV1                        *EventV2TaskTaskCommentUpdatedV1
 	eventV2HelpdeskTicketMessageCreatedV1                  *EventV2HelpdeskTicketMessageCreatedV1
 	eventV2HelpdeskTicketCreatedV1                         *EventV2HelpdeskTicketCreatedV1
-	eventV2HelpdeskTicketMessageUpdatedV1                  *EventV2HelpdeskTicketMessageUpdatedV1
+	eventV2HelpdeskTicketUpdatedV1                         *EventV2HelpdeskTicketUpdatedV1
 	eventV2HelpdeskNotificationApproveV1                   *EventV2HelpdeskNotificationApproveV1
 	eventV2ContactDepartmentCreatedV3                      *EventV2ContactDepartmentCreatedV3
 	eventV2ContactDepartmentDeletedV3                      *EventV2ContactDepartmentDeletedV3
@@ -392,6 +410,8 @@ type eventBody struct {
 	eventV1RemoveUserFromChat                              *EventV1RemoveUserFromChat
 	eventV1RevokeAddUserFromChat                           *EventV1RevokeAddUserFromChat
 	eventV1ChatDisband                                     *EventV1ChatDisband
+	eventV1ApprovalTask                                    *EventV1ApprovalTask
+	eventV1ApprovalCc                                      *EventV1ApprovalCc
 }
 
 func (r *EventCallbackService) parserEventV2(req *eventReq) error {
@@ -430,6 +450,12 @@ func (r *EventCallbackService) parserEventV2(req *eventReq) error {
 			return err
 		}
 		req.eventV2ContactCustomAttrEventUpdatedV3 = event
+	case EventTypeV2DriveFileBitableRecordChangedV1:
+		event := new(EventV2DriveFileBitableRecordChangedV1)
+		if err := req.unmarshalEvent(event); err != nil {
+			return err
+		}
+		req.eventV2DriveFileBitableRecordChangedV1 = event
 	case EventTypeV2DriveFileTitleUpdatedV1:
 		event := new(EventV2DriveFileTitleUpdatedV1)
 		if err := req.unmarshalEvent(event); err != nil {
@@ -511,6 +537,18 @@ func (r *EventCallbackService) parserEventV2(req *eventReq) error {
 			return err
 		}
 		req.eventV2ApplicationApplicationVisibilityAddedV6 = event
+	case EventTypeV2ApplicationApplicationFeedbackCreatedV6:
+		event := new(EventV2ApplicationApplicationFeedbackCreatedV6)
+		if err := req.unmarshalEvent(event); err != nil {
+			return err
+		}
+		req.eventV2ApplicationApplicationFeedbackCreatedV6 = event
+	case EventTypeV2ApplicationApplicationFeedbackUpdatedV6:
+		event := new(EventV2ApplicationApplicationFeedbackUpdatedV6)
+		if err := req.unmarshalEvent(event); err != nil {
+			return err
+		}
+		req.eventV2ApplicationApplicationFeedbackUpdatedV6 = event
 	case EventTypeV2AttendanceUserTaskUpdatedV1:
 		event := new(EventV2AttendanceUserTaskUpdatedV1)
 		if err := req.unmarshalEvent(event); err != nil {
@@ -559,12 +597,12 @@ func (r *EventCallbackService) parserEventV2(req *eventReq) error {
 			return err
 		}
 		req.eventV2HelpdeskTicketCreatedV1 = event
-	case EventTypeV2HelpdeskTicketMessageUpdatedV1:
-		event := new(EventV2HelpdeskTicketMessageUpdatedV1)
+	case EventTypeV2HelpdeskTicketUpdatedV1:
+		event := new(EventV2HelpdeskTicketUpdatedV1)
 		if err := req.unmarshalEvent(event); err != nil {
 			return err
 		}
-		req.eventV2HelpdeskTicketMessageUpdatedV1 = event
+		req.eventV2HelpdeskTicketUpdatedV1 = event
 	case EventTypeV2HelpdeskNotificationApproveV1:
 		event := new(EventV2HelpdeskNotificationApproveV1)
 		if err := req.unmarshalEvent(event); err != nil {
@@ -958,6 +996,18 @@ func (r *EventCallbackService) parserEventV1(req *eventReq) error {
 			return fmt.Errorf("lark event unmarshal event %s failed", bs)
 		}
 		req.eventV1ChatDisband = event
+	case EventTypeV1ApprovalTask:
+		event := new(EventV1ApprovalTask)
+		if err := json.Unmarshal(bs, event); err != nil {
+			return fmt.Errorf("lark event unmarshal event %s failed", bs)
+		}
+		req.eventV1ApprovalTask = event
+	case EventTypeV1ApprovalCc:
+		event := new(EventV1ApprovalCc)
+		if err := json.Unmarshal(bs, event); err != nil {
+			return fmt.Errorf("lark event unmarshal event %s failed", bs)
+		}
+		req.eventV1ApprovalCc = event
 
 	}
 
@@ -993,6 +1043,11 @@ func (r *EventCallbackService) handlerEvent(ctx context.Context, req *eventReq) 
 	case req.eventV2ContactCustomAttrEventUpdatedV3 != nil:
 		if r.cli.eventHandler.eventV2ContactCustomAttrEventUpdatedV3Handler != nil {
 			s, err = r.cli.eventHandler.eventV2ContactCustomAttrEventUpdatedV3Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2ContactCustomAttrEventUpdatedV3)
+		}
+		return true, s, err
+	case req.eventV2DriveFileBitableRecordChangedV1 != nil:
+		if r.cli.eventHandler.eventV2DriveFileBitableRecordChangedV1Handler != nil {
+			s, err = r.cli.eventHandler.eventV2DriveFileBitableRecordChangedV1Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2DriveFileBitableRecordChangedV1)
 		}
 		return true, s, err
 	case req.eventV2DriveFileTitleUpdatedV1 != nil:
@@ -1130,6 +1185,16 @@ func (r *EventCallbackService) handlerEvent(ctx context.Context, req *eventReq) 
 			s, err = r.cli.eventHandler.eventV2ApplicationApplicationVisibilityAddedV6Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2ApplicationApplicationVisibilityAddedV6)
 		}
 		return true, s, err
+	case req.eventV2ApplicationApplicationFeedbackCreatedV6 != nil:
+		if r.cli.eventHandler.eventV2ApplicationApplicationFeedbackCreatedV6Handler != nil {
+			s, err = r.cli.eventHandler.eventV2ApplicationApplicationFeedbackCreatedV6Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2ApplicationApplicationFeedbackCreatedV6)
+		}
+		return true, s, err
+	case req.eventV2ApplicationApplicationFeedbackUpdatedV6 != nil:
+		if r.cli.eventHandler.eventV2ApplicationApplicationFeedbackUpdatedV6Handler != nil {
+			s, err = r.cli.eventHandler.eventV2ApplicationApplicationFeedbackUpdatedV6Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2ApplicationApplicationFeedbackUpdatedV6)
+		}
+		return true, s, err
 	case req.eventV2AttendanceUserTaskUpdatedV1 != nil:
 		if r.cli.eventHandler.eventV2AttendanceUserTaskUpdatedV1Handler != nil {
 			s, err = r.cli.eventHandler.eventV2AttendanceUserTaskUpdatedV1Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2AttendanceUserTaskUpdatedV1)
@@ -1170,9 +1235,9 @@ func (r *EventCallbackService) handlerEvent(ctx context.Context, req *eventReq) 
 			s, err = r.cli.eventHandler.eventV2HelpdeskTicketCreatedV1Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2HelpdeskTicketCreatedV1)
 		}
 		return true, s, err
-	case req.eventV2HelpdeskTicketMessageUpdatedV1 != nil:
-		if r.cli.eventHandler.eventV2HelpdeskTicketMessageUpdatedV1Handler != nil {
-			s, err = r.cli.eventHandler.eventV2HelpdeskTicketMessageUpdatedV1Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2HelpdeskTicketMessageUpdatedV1)
+	case req.eventV2HelpdeskTicketUpdatedV1 != nil:
+		if r.cli.eventHandler.eventV2HelpdeskTicketUpdatedV1Handler != nil {
+			s, err = r.cli.eventHandler.eventV2HelpdeskTicketUpdatedV1Handler(ctx, r.cli, req.Schema, req.Header, req.eventV2HelpdeskTicketUpdatedV1)
 		}
 		return true, s, err
 	case req.eventV2HelpdeskNotificationApproveV1 != nil:
@@ -1408,6 +1473,16 @@ func (r *EventCallbackService) handlerEvent(ctx context.Context, req *eventReq) 
 	case req.eventV1ChatDisband != nil:
 		if r.cli.eventHandler.eventV1ChatDisbandHandler != nil {
 			s, err = r.cli.eventHandler.eventV1ChatDisbandHandler(ctx, r.cli, req.Schema, req.headerV1(EventTypeV1ChatDisband), req.eventV1ChatDisband)
+		}
+		return true, s, err
+	case req.eventV1ApprovalTask != nil:
+		if r.cli.eventHandler.eventV1ApprovalTaskHandler != nil {
+			s, err = r.cli.eventHandler.eventV1ApprovalTaskHandler(ctx, r.cli, req.Schema, req.headerV1(EventTypeV1ApprovalTask), req.eventV1ApprovalTask)
+		}
+		return true, s, err
+	case req.eventV1ApprovalCc != nil:
+		if r.cli.eventHandler.eventV1ApprovalCcHandler != nil {
+			s, err = r.cli.eventHandler.eventV1ApprovalCcHandler(ctx, r.cli, req.Schema, req.headerV1(EventTypeV1ApprovalCc), req.eventV1ApprovalCc)
 		}
 		return true, s, err
 

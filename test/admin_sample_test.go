@@ -37,16 +37,26 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Admin
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.AdminResetPassword(ctx, &lark.AdminResetPasswordReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminDeptStats(ctx, &lark.GetAdminDeptStatsReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminUserStats(ctx, &lark.GetAdminUserStatsReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
+
 	})
 
 	t.Run("request mock failed", func(t *testing.T) {
@@ -54,6 +64,19 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Admin
 
 		t.Run("", func(t *testing.T) {
+
+			cli.Mock().MockAdminAdminResetPassword(func(ctx context.Context, request *lark.AdminResetPasswordReq, options ...lark.MethodOptionFunc) (*lark.AdminResetPasswordResp, *lark.Response, error) {
+				return nil, nil, fmt.Errorf("mock-failed")
+			})
+			defer cli.Mock().UnMockAdminAdminResetPassword()
+
+			_, _, err := moduleCli.AdminResetPassword(ctx, &lark.AdminResetPasswordReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "mock-failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockAdminGetAdminDeptStats(func(ctx context.Context, request *lark.GetAdminDeptStatsReq, options ...lark.MethodOptionFunc) (*lark.GetAdminDeptStatsResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -65,6 +88,7 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockAdminGetAdminUserStats(func(ctx context.Context, request *lark.GetAdminUserStatsReq, options ...lark.MethodOptionFunc) (*lark.GetAdminUserStatsResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -74,6 +98,7 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 			as.NotNil(err)
 			as.Equal(err.Error(), "mock-failed")
 		})
+
 	})
 
 	t.Run("response is failed", func(t *testing.T) {
@@ -81,16 +106,26 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Admin
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.AdminResetPassword(ctx, &lark.AdminResetPasswordReq{})
+			as.NotNil(err)
+			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminDeptStats(ctx, &lark.GetAdminDeptStatsReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminUserStats(ctx, &lark.GetAdminUserStatsReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
+
 	})
 
 	t.Run("fake request is failed", func(t *testing.T) {
@@ -101,15 +136,25 @@ func Test_Admin_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.AdminResetPassword(ctx, &lark.AdminResetPasswordReq{})
+			as.NotNil(err)
+			as.Equal("fake raw request", err.Error())
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminDeptStats(ctx, &lark.GetAdminDeptStatsReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetAdminUserStats(ctx, &lark.GetAdminUserStatsReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
+
 	})
 }

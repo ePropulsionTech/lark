@@ -24,15 +24,41 @@ import (
 // Bitable Bitable client
 type Bitable struct {
 	larkClient *lark.Lark
-	appToken   string
+	token      string
+	url        string
+	typ        string
 }
 
 // NewBitable new Bitable client
 func NewBitable(larkClient *lark.Lark, appToken string) *Bitable {
-	return &Bitable{larkClient: larkClient, appToken: appToken}
+	return newBitable(larkClient, appToken, "")
+}
+
+func newBitable(larkClient *lark.Lark, token, url string) *Bitable {
+	return &Bitable{larkClient: larkClient, token: token, url: url, typ: "bitable"}
 }
 
 // Meta get bitable meta
 func (r *Bitable) Meta(ctx context.Context) (*lark.GetBitableMetaRespApp, error) {
 	return r.meta(ctx)
+}
+
+// Copy copy bitable file
+func (r *Bitable) Copy(ctx context.Context, folderToken, name string) (*Bitable, error) {
+	return r.copy(ctx, folderToken, name)
+}
+
+func (r *Bitable) Move(ctx context.Context, folderToken string) error {
+	_, err := moveFile(ctx, r.larkClient, folderToken, r.token, r.typ)
+	return err
+}
+
+func (r *Bitable) Delete(ctx context.Context) error {
+	_, err := deleteFile(ctx, r.larkClient, r.token, r.typ)
+	return err
+}
+
+// Permission grant bitable permission
+func (r *Bitable) Permission() *Permission {
+	return newPermission(r.larkClient, r.token, r.typ)
 }

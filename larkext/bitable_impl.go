@@ -23,10 +23,18 @@ import (
 
 func (r *Bitable) meta(ctx context.Context) (*lark.GetBitableMetaRespApp, error) {
 	resp, _, err := r.larkClient.Bitable.GetBitableMeta(ctx, &lark.GetBitableMetaReq{
-		AppToken: r.appToken,
+		AppToken: r.token,
 	})
 	if err != nil {
 		return nil, err
 	}
 	return resp.App, err
+}
+
+func (r *Bitable) copy(ctx context.Context, folderToken, name string) (*Bitable, error) {
+	res, err := copyFile(ctx, r.larkClient, folderToken, r.token, r.typ, name)
+	if err != nil {
+		return nil, err
+	}
+	return newBitable(r.larkClient, res.Token, res.URL), nil
 }

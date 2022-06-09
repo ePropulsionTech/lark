@@ -37,244 +37,292 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Contact
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateUser(ctx, &lark.CreateUserReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteUser(ctx, &lark.DeleteUserReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUser(ctx, &lark.GetUserReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserList(ctx, &lark.GetUserListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserListOld(ctx, &lark.GetUserListOldReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUser(ctx, &lark.BatchGetUserReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUserPatch(ctx, &lark.UpdateUserPatchReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUser(ctx, &lark.UpdateUserReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByID(ctx, &lark.BatchGetUserByIDReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByIDOld(ctx, &lark.BatchGetUserByIDOldReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateDepartment(ctx, &lark.CreateDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartment(ctx, &lark.GetDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentList(ctx, &lark.GetDepartmentListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentListOld(ctx, &lark.GetDepartmentListOldReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetParentDepartment(ctx, &lark.GetParentDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartmentPatch(ctx, &lark.UpdateDepartmentPatchReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartment(ctx, &lark.UpdateDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteDepartment(ctx, &lark.DeleteDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.UnbindDepartmentChat(ctx, &lark.UnbindDepartmentChatReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactGroup(ctx, &lark.CreateContactGroupReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactGroup(ctx, &lark.UpdateContactGroupReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroup(ctx, &lark.DeleteContactGroupReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroup(ctx, &lark.GetContactGroupReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupList(ctx, &lark.GetContactGroupListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AddContactGroupMember(ctx, &lark.AddContactGroupMemberReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroupMember(ctx, &lark.DeleteContactGroupMemberReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupMember(ctx, &lark.GetContactGroupMemberReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetEmployeeTypeEnumList(ctx, &lark.GetEmployeeTypeEnumListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateEmployeeTypeEnumPatch(ctx, &lark.UpdateEmployeeTypeEnumPatchReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteEmployeeTypeEnum(ctx, &lark.DeleteEmployeeTypeEnumReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateEmployeeTypeEnum(ctx, &lark.CreateEmployeeTypeEnumReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactCustomAttrList(ctx, &lark.GetContactCustomAttrListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactUnit(ctx, &lark.CreateContactUnitReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactUnit(ctx, &lark.UpdateContactUnitReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactUnit(ctx, &lark.DeleteContactUnitReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnit(ctx, &lark.GetContactUnitReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitList(ctx, &lark.GetContactUnitListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BindContactUnitDepartment(ctx, &lark.BindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnbindContactUnitDepartment(ctx, &lark.UnbindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitDepartmentList(ctx, &lark.GetContactUnitDepartmentListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactScopeList(ctx, &lark.GetContactScopeListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
+
 	})
 
 	t.Run("request mock failed", func(t *testing.T) {
@@ -282,6 +330,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Contact
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactCreateUser(func(ctx context.Context, request *lark.CreateUserReq, options ...lark.MethodOptionFunc) (*lark.CreateUserResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -293,6 +342,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteUser(func(ctx context.Context, request *lark.DeleteUserReq, options ...lark.MethodOptionFunc) (*lark.DeleteUserResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -304,6 +354,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetUser(func(ctx context.Context, request *lark.GetUserReq, options ...lark.MethodOptionFunc) (*lark.GetUserResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -315,6 +366,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetUserList(func(ctx context.Context, request *lark.GetUserListReq, options ...lark.MethodOptionFunc) (*lark.GetUserListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -326,6 +378,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetUserListOld(func(ctx context.Context, request *lark.GetUserListOldReq, options ...lark.MethodOptionFunc) (*lark.GetUserListOldResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -337,6 +390,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactBatchGetUser(func(ctx context.Context, request *lark.BatchGetUserReq, options ...lark.MethodOptionFunc) (*lark.BatchGetUserResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -348,6 +402,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateUserPatch(func(ctx context.Context, request *lark.UpdateUserPatchReq, options ...lark.MethodOptionFunc) (*lark.UpdateUserPatchResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -359,6 +414,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateUser(func(ctx context.Context, request *lark.UpdateUserReq, options ...lark.MethodOptionFunc) (*lark.UpdateUserResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -370,6 +426,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactBatchGetUserByID(func(ctx context.Context, request *lark.BatchGetUserByIDReq, options ...lark.MethodOptionFunc) (*lark.BatchGetUserByIDResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -381,6 +438,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactBatchGetUserByIDOld(func(ctx context.Context, request *lark.BatchGetUserByIDOldReq, options ...lark.MethodOptionFunc) (*lark.BatchGetUserByIDOldResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -392,6 +450,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactCreateDepartment(func(ctx context.Context, request *lark.CreateDepartmentReq, options ...lark.MethodOptionFunc) (*lark.CreateDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -403,6 +462,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetDepartment(func(ctx context.Context, request *lark.GetDepartmentReq, options ...lark.MethodOptionFunc) (*lark.GetDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -414,6 +474,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetDepartmentList(func(ctx context.Context, request *lark.GetDepartmentListReq, options ...lark.MethodOptionFunc) (*lark.GetDepartmentListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -425,6 +486,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetDepartmentListOld(func(ctx context.Context, request *lark.GetDepartmentListOldReq, options ...lark.MethodOptionFunc) (*lark.GetDepartmentListOldResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -436,6 +498,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetParentDepartment(func(ctx context.Context, request *lark.GetParentDepartmentReq, options ...lark.MethodOptionFunc) (*lark.GetParentDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -447,6 +510,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateDepartmentPatch(func(ctx context.Context, request *lark.UpdateDepartmentPatchReq, options ...lark.MethodOptionFunc) (*lark.UpdateDepartmentPatchResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -458,6 +522,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateDepartment(func(ctx context.Context, request *lark.UpdateDepartmentReq, options ...lark.MethodOptionFunc) (*lark.UpdateDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -469,6 +534,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteDepartment(func(ctx context.Context, request *lark.DeleteDepartmentReq, options ...lark.MethodOptionFunc) (*lark.DeleteDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -480,6 +546,19 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			cli.Mock().MockContactUnbindDepartmentChat(func(ctx context.Context, request *lark.UnbindDepartmentChatReq, options ...lark.MethodOptionFunc) (*lark.UnbindDepartmentChatResp, *lark.Response, error) {
+				return nil, nil, fmt.Errorf("mock-failed")
+			})
+			defer cli.Mock().UnMockContactUnbindDepartmentChat()
+
+			_, _, err := moduleCli.UnbindDepartmentChat(ctx, &lark.UnbindDepartmentChatReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "mock-failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactCreateContactGroup(func(ctx context.Context, request *lark.CreateContactGroupReq, options ...lark.MethodOptionFunc) (*lark.CreateContactGroupResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -491,6 +570,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateContactGroup(func(ctx context.Context, request *lark.UpdateContactGroupReq, options ...lark.MethodOptionFunc) (*lark.UpdateContactGroupResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -502,6 +582,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteContactGroup(func(ctx context.Context, request *lark.DeleteContactGroupReq, options ...lark.MethodOptionFunc) (*lark.DeleteContactGroupResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -513,6 +594,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactGroup(func(ctx context.Context, request *lark.GetContactGroupReq, options ...lark.MethodOptionFunc) (*lark.GetContactGroupResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -524,6 +606,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactGroupList(func(ctx context.Context, request *lark.GetContactGroupListReq, options ...lark.MethodOptionFunc) (*lark.GetContactGroupListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -535,6 +618,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactAddContactGroupMember(func(ctx context.Context, request *lark.AddContactGroupMemberReq, options ...lark.MethodOptionFunc) (*lark.AddContactGroupMemberResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -546,6 +630,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteContactGroupMember(func(ctx context.Context, request *lark.DeleteContactGroupMemberReq, options ...lark.MethodOptionFunc) (*lark.DeleteContactGroupMemberResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -557,6 +642,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactGroupMember(func(ctx context.Context, request *lark.GetContactGroupMemberReq, options ...lark.MethodOptionFunc) (*lark.GetContactGroupMemberResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -568,6 +654,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetEmployeeTypeEnumList(func(ctx context.Context, request *lark.GetEmployeeTypeEnumListReq, options ...lark.MethodOptionFunc) (*lark.GetEmployeeTypeEnumListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -579,6 +666,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateEmployeeTypeEnumPatch(func(ctx context.Context, request *lark.UpdateEmployeeTypeEnumPatchReq, options ...lark.MethodOptionFunc) (*lark.UpdateEmployeeTypeEnumPatchResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -590,6 +678,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteEmployeeTypeEnum(func(ctx context.Context, request *lark.DeleteEmployeeTypeEnumReq, options ...lark.MethodOptionFunc) (*lark.DeleteEmployeeTypeEnumResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -601,6 +690,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactCreateEmployeeTypeEnum(func(ctx context.Context, request *lark.CreateEmployeeTypeEnumReq, options ...lark.MethodOptionFunc) (*lark.CreateEmployeeTypeEnumResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -612,6 +702,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactCustomAttrList(func(ctx context.Context, request *lark.GetContactCustomAttrListReq, options ...lark.MethodOptionFunc) (*lark.GetContactCustomAttrListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -623,6 +714,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactCreateContactUnit(func(ctx context.Context, request *lark.CreateContactUnitReq, options ...lark.MethodOptionFunc) (*lark.CreateContactUnitResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -634,6 +726,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUpdateContactUnit(func(ctx context.Context, request *lark.UpdateContactUnitReq, options ...lark.MethodOptionFunc) (*lark.UpdateContactUnitResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -645,6 +738,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactDeleteContactUnit(func(ctx context.Context, request *lark.DeleteContactUnitReq, options ...lark.MethodOptionFunc) (*lark.DeleteContactUnitResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -656,6 +750,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactUnit(func(ctx context.Context, request *lark.GetContactUnitReq, options ...lark.MethodOptionFunc) (*lark.GetContactUnitResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -667,6 +762,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactUnitList(func(ctx context.Context, request *lark.GetContactUnitListReq, options ...lark.MethodOptionFunc) (*lark.GetContactUnitListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -678,6 +774,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactBindContactUnitDepartment(func(ctx context.Context, request *lark.BindContactUnitDepartmentReq, options ...lark.MethodOptionFunc) (*lark.BindContactUnitDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -689,6 +786,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactUnbindContactUnitDepartment(func(ctx context.Context, request *lark.UnbindContactUnitDepartmentReq, options ...lark.MethodOptionFunc) (*lark.UnbindContactUnitDepartmentResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -700,6 +798,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactUnitDepartmentList(func(ctx context.Context, request *lark.GetContactUnitDepartmentListReq, options ...lark.MethodOptionFunc) (*lark.GetContactUnitDepartmentListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -711,6 +810,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockContactGetContactScopeList(func(ctx context.Context, request *lark.GetContactScopeListReq, options ...lark.MethodOptionFunc) (*lark.GetContactScopeListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -720,6 +820,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 			as.NotNil(err)
 			as.Equal(err.Error(), "mock-failed")
 		})
+
 	})
 
 	t.Run("response is failed", func(t *testing.T) {
@@ -727,12 +828,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Contact
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateUser(ctx, &lark.CreateUserReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteUser(ctx, &lark.DeleteUserReq{
 				UserID: "x",
 			})
@@ -741,6 +844,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUser(ctx, &lark.GetUserReq{
 				UserID: "x",
 			})
@@ -749,24 +853,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserList(ctx, &lark.GetUserListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserListOld(ctx, &lark.GetUserListOldReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUser(ctx, &lark.BatchGetUserReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUserPatch(ctx, &lark.UpdateUserPatchReq{
 				UserID: "x",
 			})
@@ -775,6 +883,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUser(ctx, &lark.UpdateUserReq{
 				UserID: "x",
 			})
@@ -783,24 +892,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByID(ctx, &lark.BatchGetUserByIDReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByIDOld(ctx, &lark.BatchGetUserByIDOldReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateDepartment(ctx, &lark.CreateDepartmentReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartment(ctx, &lark.GetDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -809,6 +922,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentList(ctx, &lark.GetDepartmentListReq{
 				DepartmentID: "x",
 			})
@@ -817,18 +931,21 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentListOld(ctx, &lark.GetDepartmentListOldReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetParentDepartment(ctx, &lark.GetParentDepartmentReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartmentPatch(ctx, &lark.UpdateDepartmentPatchReq{
 				DepartmentID: "x",
 			})
@@ -837,6 +954,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartment(ctx, &lark.UpdateDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -845,6 +963,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteDepartment(ctx, &lark.DeleteDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -853,12 +972,21 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.UnbindDepartmentChat(ctx, &lark.UnbindDepartmentChatReq{})
+			as.NotNil(err)
+			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactGroup(ctx, &lark.CreateContactGroupReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactGroup(ctx, &lark.UpdateContactGroupReq{
 				GroupID: "x",
 			})
@@ -867,6 +995,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroup(ctx, &lark.DeleteContactGroupReq{
 				GroupID: "x",
 			})
@@ -875,6 +1004,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroup(ctx, &lark.GetContactGroupReq{
 				GroupID: "x",
 			})
@@ -883,12 +1013,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupList(ctx, &lark.GetContactGroupListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AddContactGroupMember(ctx, &lark.AddContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -897,6 +1029,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroupMember(ctx, &lark.DeleteContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -905,6 +1038,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupMember(ctx, &lark.GetContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -913,12 +1047,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetEmployeeTypeEnumList(ctx, &lark.GetEmployeeTypeEnumListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateEmployeeTypeEnumPatch(ctx, &lark.UpdateEmployeeTypeEnumPatchReq{
 				EnumID: "x",
 			})
@@ -927,6 +1063,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteEmployeeTypeEnum(ctx, &lark.DeleteEmployeeTypeEnumReq{
 				EnumID: "x",
 			})
@@ -935,24 +1072,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateEmployeeTypeEnum(ctx, &lark.CreateEmployeeTypeEnumReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactCustomAttrList(ctx, &lark.GetContactCustomAttrListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactUnit(ctx, &lark.CreateContactUnitReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactUnit(ctx, &lark.UpdateContactUnitReq{
 				UnitID: "x",
 			})
@@ -961,6 +1102,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactUnit(ctx, &lark.DeleteContactUnitReq{
 				UnitID: "x",
 			})
@@ -969,6 +1111,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnit(ctx, &lark.GetContactUnitReq{
 				UnitID: "x",
 			})
@@ -977,34 +1120,40 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitList(ctx, &lark.GetContactUnitListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BindContactUnitDepartment(ctx, &lark.BindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnbindContactUnitDepartment(ctx, &lark.UnbindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitDepartmentList(ctx, &lark.GetContactUnitDepartmentListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactScopeList(ctx, &lark.GetContactScopeListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
+
 	})
 
 	t.Run("fake request is failed", func(t *testing.T) {
@@ -1015,12 +1164,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateUser(ctx, &lark.CreateUserReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteUser(ctx, &lark.DeleteUserReq{
 				UserID: "x",
 			})
@@ -1029,6 +1180,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUser(ctx, &lark.GetUserReq{
 				UserID: "x",
 			})
@@ -1037,24 +1189,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserList(ctx, &lark.GetUserListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetUserListOld(ctx, &lark.GetUserListOldReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUser(ctx, &lark.BatchGetUserReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUserPatch(ctx, &lark.UpdateUserPatchReq{
 				UserID: "x",
 			})
@@ -1063,6 +1219,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateUser(ctx, &lark.UpdateUserReq{
 				UserID: "x",
 			})
@@ -1071,24 +1228,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByID(ctx, &lark.BatchGetUserByIDReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BatchGetUserByIDOld(ctx, &lark.BatchGetUserByIDOldReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateDepartment(ctx, &lark.CreateDepartmentReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartment(ctx, &lark.GetDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -1097,6 +1258,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentList(ctx, &lark.GetDepartmentListReq{
 				DepartmentID: "x",
 			})
@@ -1105,18 +1267,21 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetDepartmentListOld(ctx, &lark.GetDepartmentListOldReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetParentDepartment(ctx, &lark.GetParentDepartmentReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartmentPatch(ctx, &lark.UpdateDepartmentPatchReq{
 				DepartmentID: "x",
 			})
@@ -1125,6 +1290,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateDepartment(ctx, &lark.UpdateDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -1133,6 +1299,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteDepartment(ctx, &lark.DeleteDepartmentReq{
 				DepartmentID: "x",
 			})
@@ -1141,12 +1308,21 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.UnbindDepartmentChat(ctx, &lark.UnbindDepartmentChatReq{})
+			as.NotNil(err)
+			as.Equal("fake raw request", err.Error())
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactGroup(ctx, &lark.CreateContactGroupReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactGroup(ctx, &lark.UpdateContactGroupReq{
 				GroupID: "x",
 			})
@@ -1155,6 +1331,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroup(ctx, &lark.DeleteContactGroupReq{
 				GroupID: "x",
 			})
@@ -1163,6 +1340,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroup(ctx, &lark.GetContactGroupReq{
 				GroupID: "x",
 			})
@@ -1171,12 +1349,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupList(ctx, &lark.GetContactGroupListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AddContactGroupMember(ctx, &lark.AddContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -1185,6 +1365,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactGroupMember(ctx, &lark.DeleteContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -1193,6 +1374,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactGroupMember(ctx, &lark.GetContactGroupMemberReq{
 				GroupID: "x",
 			})
@@ -1201,12 +1383,14 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetEmployeeTypeEnumList(ctx, &lark.GetEmployeeTypeEnumListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateEmployeeTypeEnumPatch(ctx, &lark.UpdateEmployeeTypeEnumPatchReq{
 				EnumID: "x",
 			})
@@ -1215,6 +1399,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteEmployeeTypeEnum(ctx, &lark.DeleteEmployeeTypeEnumReq{
 				EnumID: "x",
 			})
@@ -1223,24 +1408,28 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateEmployeeTypeEnum(ctx, &lark.CreateEmployeeTypeEnumReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactCustomAttrList(ctx, &lark.GetContactCustomAttrListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.CreateContactUnit(ctx, &lark.CreateContactUnitReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UpdateContactUnit(ctx, &lark.UpdateContactUnitReq{
 				UnitID: "x",
 			})
@@ -1249,6 +1438,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DeleteContactUnit(ctx, &lark.DeleteContactUnitReq{
 				UnitID: "x",
 			})
@@ -1257,6 +1447,7 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnit(ctx, &lark.GetContactUnitReq{
 				UnitID: "x",
 			})
@@ -1265,33 +1456,39 @@ func Test_Contact_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitList(ctx, &lark.GetContactUnitListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.BindContactUnitDepartment(ctx, &lark.BindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnbindContactUnitDepartment(ctx, &lark.UnbindContactUnitDepartmentReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactUnitDepartmentList(ctx, &lark.GetContactUnitDepartmentListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetContactScopeList(ctx, &lark.GetContactScopeListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
+
 	})
 }

@@ -30,7 +30,6 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/epropulsion-tech/lark/internal"
 )
@@ -206,7 +205,7 @@ func (r *Lark) doRequest(ctx context.Context, rawHttpReq *rawHttpRequest, realRe
 		}
 
 		if err = json.Unmarshal(bs, realResponse); err != nil {
-			return response, fmt.Errorf("invalid json: %s", bs)
+			return response, fmt.Errorf("invalid json: %s, err: %s", bs, err)
 		}
 	}
 
@@ -446,11 +445,9 @@ type defaultHttpClient struct {
 	ins *http.Client
 }
 
-func newDefaultHttpClient(timeout time.Duration) HttpClient {
+func newDefaultHttpClient(cli *http.Client) HttpClient {
 	return &defaultHttpClient{
-		ins: &http.Client{
-			Timeout: timeout,
-		},
+		ins: cli,
 	}
 }
 

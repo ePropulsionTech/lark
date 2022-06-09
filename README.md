@@ -38,7 +38,7 @@ https://godoc.org/github.com/chyroc/lark
 
 ## Support APIs
 
-API Count: 551, Event Count: 88
+API Count: 584, Event Count: 93
 
 <details>
   <summary>
@@ -71,6 +71,7 @@ API Count: 551, Event Count: 88
   - UpdateDepartmentPatch
   - UpdateDepartment
   - DeleteDepartment
+  - UnbindDepartmentChat
   - CreateContactGroup
   - UpdateContactGroup
   - DeleteContactGroup
@@ -135,6 +136,8 @@ API Count: 551, Event Count: 88
   - UpdateChatAnnouncement
   - GetChatModeration
   - UpdateChatModeration
+  - UpdateChatTopNotice
+  - DeleteChatTopNotice
 - Bot
   - GetBotInfo
   - AddBotToChat
@@ -172,19 +175,26 @@ API Count: 551, Event Count: 88
   - GetCalendarExchangeBinding
   - DeleteCalendarExchangeBinding
 - Drive
+  - GetDriveDocxDocument
+  - GetDriveDocxDocumentRawContent
+  - SubscribeDriveFile
   - SearchDriveFile
   - GetDriveFileMeta
   - CreateDriveFile
-  - CopyDriveFile
   - DeleteDriveFile
-  - DeleteDriveDocFile
   - DeleteDriveSheetFile
-  - CreateDriveFolder
   - GetDriveFolderMeta
   - GetDriveRootFolderMeta
   - GetDriveFolderChildren
   - GetDriveFileStatistics
+  - GetDriveFileTask
+  - CreateDriveExportTask
+  - GetDriveExportTask
+  - DownloadDriveExportTask
   - DownloadDriveFile
+  - CopyDriveFile
+  - CreateDriveFolder
+  - MoveDriveFile
   - UploadDriveFile
   - PrepareUploadDriveFile
   - PartUploadDriveFile
@@ -203,9 +213,7 @@ API Count: 551, Event Count: 88
   - UpdateDriveMemberPermissionOld
   - UpdateDriveMemberPermission
   - CheckDriveMemberPermission
-  - UpdateDrivePublicPermissionV1Old
-  - UpdateDrivePublicPermissionV2Old
-  - GetDrivePublicPermissionV2
+  - GetDrivePublicPermission
   - UpdateDrivePublicPermission
   - BatchGetDriveMediaTmpDownloadURL
   - GetDriveCommentList
@@ -219,6 +227,7 @@ API Count: 551, Event Count: 88
   - UpdateDriveFileSubscription
   - CreateDriveDoc
   - GetDriveDocContent
+  - UpdateDriveDocContent
   - GetDriveDocRawContent
   - GetDriveDocMeta
   - CreateSheet
@@ -305,11 +314,19 @@ API Count: 551, Event Count: 88
   - CreateBitableField
   - UpdateBitableField
   - DeleteBitableField
+  - GetBitableAppRoleList
+  - CreateBitableAppRole
+  - DeleteBitableAppRole
+  - UpdateBitableAppRole
+  - GetBitableAppRoleMemberList
+  - CreateBitableAppRoleMember
+  - DeleteBitableAppRoleMember
   - GetBitableTableList
   - CreateBitableTable
   - BatchCreateBitableTable
   - DeleteBitableTable
   - BatchDeleteBitableTable
+  - UpdateBitableMeta
   - GetBitableMeta
 - MeetingRoom
   - GetMeetingRoomCustomization
@@ -370,7 +387,10 @@ API Count: 551, Event Count: 88
   - UpdateApplication
   - GetApplicationUsageOverview
   - GetApplicationUsageTrend
+  - UpdateApplicationFeedback
+  - GetApplicationFeedbackList
 - Mail
+  - GetMailUser
   - CreateMailGroup
   - GetMailGroup
   - GetMailGroupList
@@ -385,6 +405,9 @@ API Count: 551, Event Count: 88
   - GetMailGroupPermissionMember
   - GetMailGroupPermissionMemberList
   - DeleteMailGroupPermissionMember
+  - CreateMailGroupAlias
+  - GetMailGroupAliasList
+  - DeleteMailGroupAlias
   - CreatePublicMailbox
   - GetPublicMailbox
   - GetPublicMailboxList
@@ -396,9 +419,13 @@ API Count: 551, Event Count: 88
   - GetPublicMailboxMemberList
   - DeletePublicMailboxMember
   - ClearPublicMailboxMember
-  - CreateMailUserAlias
-  - DeleteMailUserAlias
-  - GetMailUserAliasList
+  - CreateMailPublicMailboxAlias
+  - GetMailPublicMailboxAliasList
+  - DeleteMailPublicMailboxAlias
+  - CreateMailUserMailboxAlias
+  - DeleteMailUserMailboxAlias
+  - GetMailUserMailboxAliasList
+  - DeleteMailUserMailbox
 - Approval
   - GetApproval
   - GetApprovalInstanceList
@@ -420,6 +447,8 @@ API Count: 551, Event Count: 88
   - UpdateApprovalMessage
   - SubscribeApprovalSubscription
   - UnsubscribeApprovalSubscription
+  - GetApprovalExternalList
+  - SendApprovalMessage
 - Helpdesk
   - CreateHelpdeskNotification
   - UpdateHelpdeskNotification
@@ -435,6 +464,7 @@ API Count: 551, Event Count: 88
   - GetHelpdeskTicketList
   - DownloadHelpdeskTicketImage
   - AnswerHelpdeskTicketUserQuery
+  - GetHelpdeskTicketCustomizedFields
   - GetHelpdeskTicketMessageList
   - SendHelpdeskTicketMessage
   - SendHelpdeskMessage
@@ -471,6 +501,7 @@ API Count: 551, Event Count: 88
   - SubscribeHelpdeskEvent
   - UnsubscribeHelpdeskEvent
 - Admin
+  - AdminResetPassword
   - GetAdminDeptStats
   - GetAdminUserStats
 - HumanAuth
@@ -486,10 +517,12 @@ API Count: 551, Event Count: 88
   - DetectTextLanguage
   - DetectFaceAttributes
 - Attendance
+  - GetAttendanceGroupList
   - CreateAttendanceGroup
   - SearchAttendanceGroup
   - GetAttendanceGroup
   - DeleteAttendanceGroup
+  - GetAttendanceShiftList
   - GetAttendanceShift
   - GetAttendanceShiftDetail
   - DeleteAttendanceShift
@@ -511,11 +544,8 @@ API Count: 551, Event Count: 88
   - UpdateAttendanceUserSetting
   - DownloadAttendanceFile
   - UploadAttendanceFile
-  - CreateUpdateAttendanceUserDailyShift
   - GetAttendanceUserApproval
   - CreateAttendanceUserApproval
-  - GetAttendanceUserAllowedRemedy
-  - InitAttendanceRemedyApproval
   - UpdateAttendanceRemedyApproval
 - File
   - UploadImage
@@ -602,12 +632,17 @@ API Count: 551, Event Count: 88
   - MatchBaikeEntity
   - SearchBaikeEntity
   - HighlightBaikeEntity
+- Passport
+  - GetPassportSession
+- Event
+  - GetEventOutboundIpList
 - EventCallback
   - EventV2ApplicationApplicationAppVersionAuditV6
   - EventV2ApplicationApplicationAppVersionPublishApplyV6
   - EventV2ApplicationApplicationAppVersionPublishRevokeV6
   - EventV2ApplicationApplicationCreatedV6
   - EventV2ContactCustomAttrEventUpdatedV3
+  - EventV2DriveFileBitableRecordChangedV1
   - EventV2DriveFileTitleUpdatedV1
   - EventV2DriveFileReadV1
   - EventV2DriveFileEditV1
@@ -635,6 +670,8 @@ API Count: 551, Event Count: 88
   - EventV1AppUninstalled
   - EventV1AppStatusChange
   - EventV2ApplicationApplicationVisibilityAddedV6
+  - EventV2ApplicationApplicationFeedbackCreatedV6
+  - EventV2ApplicationApplicationFeedbackUpdatedV6
   - EventV2AttendanceUserTaskUpdatedV1
   - EventV2AttendanceUserFlowCreatedV1
   - EventV2AwemeEcosystemAwemeUserBindedAccountV1
@@ -643,7 +680,7 @@ API Count: 551, Event Count: 88
   - EventV2TaskTaskCommentUpdatedV1
   - EventV2HelpdeskTicketMessageCreatedV1
   - EventV2HelpdeskTicketCreatedV1
-  - EventV2HelpdeskTicketMessageUpdatedV1
+  - EventV2HelpdeskTicketUpdatedV1
   - EventV2HelpdeskNotificationApproveV1
   - EventV2ContactDepartmentCreatedV3
   - EventV2ContactDepartmentDeletedV3
@@ -691,6 +728,8 @@ API Count: 551, Event Count: 88
   - EventV1RemoveUserFromChat
   - EventV1RevokeAddUserFromChat
   - EventV1ChatDisband
+  - EventV1ApprovalTask
+  - EventV1ApprovalCc
 - AppLink
   - OpenLark
   - OpenMiniProgram
@@ -708,6 +747,7 @@ API Count: 551, Event Count: 88
   - OpenTaskCreate
   - OpenTaskDetail
   - OpenTaskTab
+  - OpenScan
 
 
 </details>

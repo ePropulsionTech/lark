@@ -37,154 +37,187 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Helpdesk
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskNotification(ctx, &lark.GetHelpdeskNotificationReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.StartHelpdeskService(ctx, &lark.StartHelpdeskServiceReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicket(ctx, &lark.GetHelpdeskTicketReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketList(ctx, &lark.GetHelpdeskTicketListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DownloadHelpdeskTicketImage(ctx, &lark.DownloadHelpdeskTicketImageReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AnswerHelpdeskTicketUserQuery(ctx, &lark.AnswerHelpdeskTicketUserQueryReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFields(ctx, &lark.GetHelpdeskTicketCustomizedFieldsReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketMessageList(ctx, &lark.GetHelpdeskTicketMessageListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskTicketMessage(ctx, &lark.SendHelpdeskTicketMessageReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskMessage(ctx, &lark.SendHelpdeskMessageReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFieldList(ctx, &lark.GetHelpdeskTicketCustomizedFieldListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedField(ctx, &lark.GetHelpdeskTicketCustomizedFieldReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategory(ctx, &lark.GetHelpdeskCategoryReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategoryList(ctx, &lark.GetHelpdeskCategoryListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQ(ctx, &lark.GetHelpdeskFAQReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQList(ctx, &lark.GetHelpdeskFAQListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQImage(ctx, &lark.GetHelpdeskFAQImageReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SearchHelpdeskFAQ(ctx, &lark.SearchHelpdeskFAQReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentEmail(ctx, &lark.GetHelpdeskAgentEmailReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSchedule(ctx, &lark.GetHelpdeskAgentScheduleReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentScheduleList(ctx, &lark.GetHelpdeskAgentScheduleListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkill(ctx, &lark.GetHelpdeskAgentSkillReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillList(ctx, &lark.GetHelpdeskAgentSkillListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillRuleList(ctx, &lark.GetHelpdeskAgentSkillRuleListReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SubscribeHelpdeskEvent(ctx, &lark.SubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnsubscribeHelpdeskEvent(ctx, &lark.UnsubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.Equal(err.Error(), "failed")
 		})
+
 	})
 
 	t.Run("request mock failed", func(t *testing.T) {
@@ -192,6 +225,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Helpdesk
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskNotification(func(ctx context.Context, request *lark.GetHelpdeskNotificationReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskNotificationResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -203,6 +237,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskStartHelpdeskService(func(ctx context.Context, request *lark.StartHelpdeskServiceReq, options ...lark.MethodOptionFunc) (*lark.StartHelpdeskServiceResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -214,6 +249,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskTicket(func(ctx context.Context, request *lark.GetHelpdeskTicketReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -225,6 +261,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskTicketList(func(ctx context.Context, request *lark.GetHelpdeskTicketListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -236,6 +273,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskDownloadHelpdeskTicketImage(func(ctx context.Context, request *lark.DownloadHelpdeskTicketImageReq, options ...lark.MethodOptionFunc) (*lark.DownloadHelpdeskTicketImageResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -247,6 +285,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskAnswerHelpdeskTicketUserQuery(func(ctx context.Context, request *lark.AnswerHelpdeskTicketUserQueryReq, options ...lark.MethodOptionFunc) (*lark.AnswerHelpdeskTicketUserQueryResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -258,6 +297,19 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			cli.Mock().MockHelpdeskGetHelpdeskTicketCustomizedFields(func(ctx context.Context, request *lark.GetHelpdeskTicketCustomizedFieldsReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketCustomizedFieldsResp, *lark.Response, error) {
+				return nil, nil, fmt.Errorf("mock-failed")
+			})
+			defer cli.Mock().UnMockHelpdeskGetHelpdeskTicketCustomizedFields()
+
+			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFields(ctx, &lark.GetHelpdeskTicketCustomizedFieldsReq{})
+			as.NotNil(err)
+			as.Equal(err.Error(), "mock-failed")
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskTicketMessageList(func(ctx context.Context, request *lark.GetHelpdeskTicketMessageListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketMessageListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -269,6 +321,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskSendHelpdeskTicketMessage(func(ctx context.Context, request *lark.SendHelpdeskTicketMessageReq, options ...lark.MethodOptionFunc) (*lark.SendHelpdeskTicketMessageResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -280,6 +333,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskSendHelpdeskMessage(func(ctx context.Context, request *lark.SendHelpdeskMessageReq, options ...lark.MethodOptionFunc) (*lark.SendHelpdeskMessageResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -291,6 +345,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskTicketCustomizedFieldList(func(ctx context.Context, request *lark.GetHelpdeskTicketCustomizedFieldListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketCustomizedFieldListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -302,6 +357,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskTicketCustomizedField(func(ctx context.Context, request *lark.GetHelpdeskTicketCustomizedFieldReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskTicketCustomizedFieldResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -313,6 +369,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskCategory(func(ctx context.Context, request *lark.GetHelpdeskCategoryReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskCategoryResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -324,6 +381,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskCategoryList(func(ctx context.Context, request *lark.GetHelpdeskCategoryListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskCategoryListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -335,6 +393,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskFAQ(func(ctx context.Context, request *lark.GetHelpdeskFAQReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskFAQResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -346,6 +405,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskFAQList(func(ctx context.Context, request *lark.GetHelpdeskFAQListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskFAQListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -357,6 +417,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskFAQImage(func(ctx context.Context, request *lark.GetHelpdeskFAQImageReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskFAQImageResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -368,6 +429,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskSearchHelpdeskFAQ(func(ctx context.Context, request *lark.SearchHelpdeskFAQReq, options ...lark.MethodOptionFunc) (*lark.SearchHelpdeskFAQResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -379,6 +441,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentEmail(func(ctx context.Context, request *lark.GetHelpdeskAgentEmailReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentEmailResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -390,6 +453,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentSchedule(func(ctx context.Context, request *lark.GetHelpdeskAgentScheduleReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentScheduleResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -401,6 +465,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentScheduleList(func(ctx context.Context, request *lark.GetHelpdeskAgentScheduleListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentScheduleListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -412,6 +477,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentSkill(func(ctx context.Context, request *lark.GetHelpdeskAgentSkillReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentSkillResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -423,6 +489,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentSkillList(func(ctx context.Context, request *lark.GetHelpdeskAgentSkillListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentSkillListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -434,6 +501,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskGetHelpdeskAgentSkillRuleList(func(ctx context.Context, request *lark.GetHelpdeskAgentSkillRuleListReq, options ...lark.MethodOptionFunc) (*lark.GetHelpdeskAgentSkillRuleListResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -445,6 +513,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskSubscribeHelpdeskEvent(func(ctx context.Context, request *lark.SubscribeHelpdeskEventReq, options ...lark.MethodOptionFunc) (*lark.SubscribeHelpdeskEventResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -456,6 +525,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			cli.Mock().MockHelpdeskUnsubscribeHelpdeskEvent(func(ctx context.Context, request *lark.UnsubscribeHelpdeskEventReq, options ...lark.MethodOptionFunc) (*lark.UnsubscribeHelpdeskEventResp, *lark.Response, error) {
 				return nil, nil, fmt.Errorf("mock-failed")
 			})
@@ -465,6 +535,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 			as.NotNil(err)
 			as.Equal(err.Error(), "mock-failed")
 		})
+
 	})
 
 	t.Run("response is failed", func(t *testing.T) {
@@ -472,6 +543,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		moduleCli := cli.Helpdesk
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskNotification(ctx, &lark.GetHelpdeskNotificationReq{
 				NotificationID: "x",
 			})
@@ -480,12 +552,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.StartHelpdeskService(ctx, &lark.StartHelpdeskServiceReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicket(ctx, &lark.GetHelpdeskTicketReq{
 				TicketID: "x",
 			})
@@ -494,18 +568,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketList(ctx, &lark.GetHelpdeskTicketListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DownloadHelpdeskTicketImage(ctx, &lark.DownloadHelpdeskTicketImageReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AnswerHelpdeskTicketUserQuery(ctx, &lark.AnswerHelpdeskTicketUserQueryReq{
 				TicketID: "x",
 			})
@@ -514,6 +591,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFields(ctx, &lark.GetHelpdeskTicketCustomizedFieldsReq{})
+			as.NotNil(err)
+			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketMessageList(ctx, &lark.GetHelpdeskTicketMessageListReq{
 				TicketID: "x",
 			})
@@ -522,6 +607,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskTicketMessage(ctx, &lark.SendHelpdeskTicketMessageReq{
 				TicketID: "x",
 			})
@@ -530,18 +616,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskMessage(ctx, &lark.SendHelpdeskMessageReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFieldList(ctx, &lark.GetHelpdeskTicketCustomizedFieldListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedField(ctx, &lark.GetHelpdeskTicketCustomizedFieldReq{
 				TicketCustomizedFieldID: "x",
 			})
@@ -550,6 +639,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategory(ctx, &lark.GetHelpdeskCategoryReq{
 				ID: "x",
 			})
@@ -558,12 +648,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategoryList(ctx, &lark.GetHelpdeskCategoryListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQ(ctx, &lark.GetHelpdeskFAQReq{
 				ID: "x",
 			})
@@ -572,12 +664,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQList(ctx, &lark.GetHelpdeskFAQListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQImage(ctx, &lark.GetHelpdeskFAQImageReq{
 				ID:       "x",
 				ImageKey: "x",
@@ -587,18 +681,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SearchHelpdeskFAQ(ctx, &lark.SearchHelpdeskFAQReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentEmail(ctx, &lark.GetHelpdeskAgentEmailReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSchedule(ctx, &lark.GetHelpdeskAgentScheduleReq{
 				AgentID: "x",
 			})
@@ -607,12 +704,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentScheduleList(ctx, &lark.GetHelpdeskAgentScheduleListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkill(ctx, &lark.GetHelpdeskAgentSkillReq{
 				AgentSkillID: "x",
 			})
@@ -621,28 +720,33 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillList(ctx, &lark.GetHelpdeskAgentSkillListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillRuleList(ctx, &lark.GetHelpdeskAgentSkillRuleListReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SubscribeHelpdeskEvent(ctx, &lark.SubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnsubscribeHelpdeskEvent(ctx, &lark.UnsubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.True(lark.GetErrorCode(err) > 0, fmt.Sprintf("need get lark err, but get %s", err))
 		})
+
 	})
 
 	t.Run("fake request is failed", func(t *testing.T) {
@@ -653,6 +757,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskNotification(ctx, &lark.GetHelpdeskNotificationReq{
 				NotificationID: "x",
 			})
@@ -661,12 +766,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.StartHelpdeskService(ctx, &lark.StartHelpdeskServiceReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicket(ctx, &lark.GetHelpdeskTicketReq{
 				TicketID: "x",
 			})
@@ -675,18 +782,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketList(ctx, &lark.GetHelpdeskTicketListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.DownloadHelpdeskTicketImage(ctx, &lark.DownloadHelpdeskTicketImageReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.AnswerHelpdeskTicketUserQuery(ctx, &lark.AnswerHelpdeskTicketUserQueryReq{
 				TicketID: "x",
 			})
@@ -695,6 +805,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
+			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFields(ctx, &lark.GetHelpdeskTicketCustomizedFieldsReq{})
+			as.NotNil(err)
+			as.Equal("fake raw request", err.Error())
+		})
+
+		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketMessageList(ctx, &lark.GetHelpdeskTicketMessageListReq{
 				TicketID: "x",
 			})
@@ -703,6 +821,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskTicketMessage(ctx, &lark.SendHelpdeskTicketMessageReq{
 				TicketID: "x",
 			})
@@ -711,18 +830,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SendHelpdeskMessage(ctx, &lark.SendHelpdeskMessageReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedFieldList(ctx, &lark.GetHelpdeskTicketCustomizedFieldListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskTicketCustomizedField(ctx, &lark.GetHelpdeskTicketCustomizedFieldReq{
 				TicketCustomizedFieldID: "x",
 			})
@@ -731,6 +853,7 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategory(ctx, &lark.GetHelpdeskCategoryReq{
 				ID: "x",
 			})
@@ -739,12 +862,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskCategoryList(ctx, &lark.GetHelpdeskCategoryListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQ(ctx, &lark.GetHelpdeskFAQReq{
 				ID: "x",
 			})
@@ -753,12 +878,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQList(ctx, &lark.GetHelpdeskFAQListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskFAQImage(ctx, &lark.GetHelpdeskFAQImageReq{
 				ID:       "x",
 				ImageKey: "x",
@@ -768,18 +895,21 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SearchHelpdeskFAQ(ctx, &lark.SearchHelpdeskFAQReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentEmail(ctx, &lark.GetHelpdeskAgentEmailReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSchedule(ctx, &lark.GetHelpdeskAgentScheduleReq{
 				AgentID: "x",
 			})
@@ -788,12 +918,14 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentScheduleList(ctx, &lark.GetHelpdeskAgentScheduleListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkill(ctx, &lark.GetHelpdeskAgentSkillReq{
 				AgentSkillID: "x",
 			})
@@ -802,27 +934,32 @@ func Test_Helpdesk_Sample_Failed(t *testing.T) {
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillList(ctx, &lark.GetHelpdeskAgentSkillListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.GetHelpdeskAgentSkillRuleList(ctx, &lark.GetHelpdeskAgentSkillRuleListReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.SubscribeHelpdeskEvent(ctx, &lark.SubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
 
 		t.Run("", func(t *testing.T) {
+
 			_, _, err := moduleCli.UnsubscribeHelpdeskEvent(ctx, &lark.UnsubscribeHelpdeskEventReq{})
 			as.NotNil(err)
 			as.Equal("fake raw request", err.Error())
 		})
+
 	})
 }

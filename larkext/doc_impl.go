@@ -30,8 +30,9 @@ func (r *Doc) meta(ctx context.Context) (*lark.GetDriveDocMetaResp, error) {
 }
 
 func (r *Doc) delete(ctx context.Context) error {
-	_, _, err := r.larkClient.Drive.DeleteDriveDocFile(ctx, &lark.DeleteDriveDocFileReq{
-		DocToken: r.docToken,
+	_, _, err := r.larkClient.Drive.DeleteDriveFile(ctx, &lark.DeleteDriveFileReq{
+		Type:      "doc",
+		FileToken: r.docToken,
 	})
 	return err
 }
@@ -55,6 +56,37 @@ func (r *Doc) content(ctx context.Context) (*lark.DocContent, error) {
 	return doc, err
 }
 
+func (r *Doc) update(ctx context.Context, requests ...*lark.UpdateDocRequest) error {
+	revision, err := r.revision(ctx)
+	if err != nil {
+		return err
+	}
+	_, _, err = r.larkClient.Drive.UpdateDriveDocContent(ctx, &lark.UpdateDriveDocContentReq{
+		DocToken: r.docToken,
+		Revision: revision,
+		Requests: lark.UpdateDocRequests(requests).ToString(),
+	})
+	return err
+}
+
+func (r *Doc) copy(ctx context.Context, folderToken, name string) (*Doc, error) {
+	res, err := copyFile(ctx, r.larkClient, folderToken, r.docToken, r.typ, name)
+	if err != nil {
+		return nil, err
+	}
+	return newDoc(r.larkClient, res.Token, res.URL), nil
+}
+
+func (r *Doc) revision(ctx context.Context) (int64, error) {
+	resp, _, err := r.larkClient.Drive.GetDriveDocContent(ctx, &lark.GetDriveDocContentReq{
+		DocToken: r.docToken,
+	})
+	if err != nil {
+		return 0, err
+	}
+	return resp.Revision, nil
+}
+
 func (r *Doc) uploadMedia(ctx context.Context, parentType, parentToken string) {
 	r.larkClient.Drive.UploadDriveMedia(ctx, &lark.UploadDriveMediaReq{
 		FileName:   "",
@@ -66,5 +98,3 @@ func (r *Doc) uploadMedia(ctx context.Context, parentType, parentToken string) {
 		File:       nil,
 	})
 }
-
-// 编辑
